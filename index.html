@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>index</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="container">
+		<h1>Student Enrollment System</h1>
+
+		<form id="enrollmentForm" novalidate>
+			<div class="row">
+				<label for="studentId">Student ID *</label>
+				<input type="text" id="studentId" name="studentId" minlength="5" required>
+				<div class="error" id="err-studentId"></div>
+			</div>
+
+			<div class="row">
+				<label for="prefix">Prefix</label>
+				<input type="text" id="prefix" name="prefix" minlength="2">
+				<div class="error" id="err-prefix"></div>
+			</div>
+
+			<div class="row">
+				<label for="firstName">First Name *</label>
+				<input type="text" id="firstName" name="firstName" minlength="3" required>
+				<div class="error" id="err-firstName"></div>
+			</div>
+
+			<div class="row">
+				<label for="middleName">Middle Name</label>
+				<input type="text" id="middleName" name="middleName" minlength="2">
+				<div class="error" id="err-middleName"></div>
+			</div>
+
+			<div class="row">
+				<label for="lastName">Last Name *</label>
+				<input type="text" id="lastName" name="lastName" minlength="2" required>
+				<div class="error" id="err-lastName"></div>
+			</div>
+
+			<div class="row">
+				<label for="suffix">Suffix</label>
+				<input type="text" id="suffix" name="suffix" minlength="2">
+				<div class="error" id="err-suffix"></div>
+			</div>
+
+			<div class="row">
+				<label for="email">Email *</label>
+				<input type="email" id="email" name="email" required>
+				<div class="error" id="err-email"></div>
+			</div>
+
+			<div class="row">
+				<label for="course">Course *</label>
+				<select id="course" name="course" required>
+					<option value="">-- Select Course --</option>
+					<option value="BSIT">BSIT</option>
+					<option value="BSCS">BSCS</option>
+					<option value="BMMA">BMMA</option>
+					<option value="BSAIS">BSAIS</option>
+				</select>
+				<div class="error" id="err-course"></div>
+			</div>
+
+			<div class="row hidden" id="majorRow">
+				<label for="major">Major</label>
+				<select id="major" name="major">
+					<option value="">-- Select Major --</option>
+					<option value="Net Sec">Net Sec</option>
+					<option value="Web Tech">Web Tech</option>
+					<option value="ERP">ERP</option>
+				</select>
+				<div class="error" id="err-major"></div>
+			</div>
+
+			<div class="row">
+				<label for="yearLevel">Year Level *</label>
+				<select id="yearLevel" name="yearLevel" required>
+					<option value="">-- Select Year --</option>
+					<option value="1st Year">1st Year</option>
+					<option value="2nd Year">2nd Year</option>
+					<option value="3rd Year">3rd Year</option>
+				</select>
+				<div class="error" id="err-yearLevel"></div>
+			</div>
+
+			<div class="row actions">
+				<button type="submit" id="submitBtn">Submit Enrollment</button>
+			</div>
+
+			<div id="formMessage" aria-live="polite"></div>
+		</form>
+
+		<section class="submissions">
+			<h2>Submitted Enrollments</h2>
+			<table id="submissionsTable">
+				<thead>
+					<tr>
+						<th>Student ID</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Course</th>
+						<th>Major</th>
+						<th>Year</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
